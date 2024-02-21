@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/nombreUsuario"
+        android:id="@+id/ingresarNombre"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -33,25 +33,25 @@
         app:layout_constraintTop_toBottomOf="@id/progress" />
 
     <EditText
-        android:id="@+id/porcentaje"
+        android:id="@+id/ingresarPorcentaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombreUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/ingresarNombre"
         app:layout_constraintVertical_bias="0.52" />
 
     <EditText
-        android:id="@+id/notas"
+        android:id="@+id/ingresarNotas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/porcentaje" />
+        app:layout_constraintTop_toBottomOf="@+id/ingresarPorcentaje" />
 
     <Button
         android:id="@+id/finalizar"
@@ -63,10 +63,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/notas" />
+        app:layout_constraintTop_toBottomOf="@id/ingresarNotas" />
 
     <Button
-        android:id="@+id/enviar"
+        android:id="@+id/guardar"
         android:layout_width="200dp"
         android:layout_height="55dp"
         android:layout_marginBottom="315dp"
