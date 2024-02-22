@@ -55,10 +55,11 @@
 
     <Button
         android:id="@+id/finalizar"
-        android:layout_width="374dp"
-        android:layout_height="55dp"
+        android:layout_width="300dp"
+        android:layout_height="56dp"
         android:layout_marginBottom="380dp"
-        android:text="Button"
+        android:enabled="false"
+        android:text="finalizar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.432"
@@ -70,7 +71,7 @@
         android:layout_width="200dp"
         android:layout_height="55dp"
         android:layout_marginBottom="315dp"
-        android:text="Button"
+        android:text="guardar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
