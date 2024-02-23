@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         finalizar = findViewById(R.id.finalizar)
         guardar = findViewById(R.id.guardar)
 
-        ingresarNotas.setOnClickListener {
+        guardar.setOnClickListener {
             val nota = (ingresarNotas.text.toString())
             val porcentaje = (ingresarPorcentaje.text.toString())
             val nombre = (ingresarNombre.text.toString())
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
                    mostrarMensaje("verifique los datos ingresados")
                 }
              }else{
-                 mostrarMensaje("Dotas incompletos")
+                 mostrarMensaje("Datos incompletos")
              }
         }
     }
