@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
                     porcentajeAcumulado += porcentaje.toInt()
 
-                    actualizarProgreso(porcentajeAcumulado)
+                    actualizarProgress(porcentajeAcumulado)
 
                     ingresarNombre.isEnabled = false
                     ingresarNotas.text.clear()
@@ -64,11 +64,10 @@ class MainActivity : AppCompatActivity() {
              }
         }
     }
-    fun actualizarProgreso(porcentaje : Int) {
+    fun actualizarProgress(porcentaje : Int) {
         progress.progress = porcentaje
         if (porcentaje >= 100){
             finalizar.isEnabled = true
-
         }
     }
     fun mostrarMensaje(mensaje : String){
