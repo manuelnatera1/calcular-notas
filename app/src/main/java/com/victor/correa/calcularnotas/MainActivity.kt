@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
+import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +18,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var ingresarNotas : EditText
     private lateinit var finalizar : Button
     private lateinit var guardar : Button
+    private lateinit var promedio : TextView
+    private lateinit var notaFinal : TextView
+    private lateinit var nuevoEstudiante : Button
+    private var estudianteActual: Estudiante = Estudiante()
 
     private var porcentajeAcumulado = 0
     val listaNotas : MutableList<Double> = mutableListOf()
@@ -26,18 +32,28 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main )
 
-
         progress = findViewById(R.id.progress)
         ingresarNombre = findViewById(R.id.ingresarNombre)
         ingresarPorcentaje = findViewById(R.id.ingresarPorcentaje)
         ingresarNotas = findViewById(R.id.ingresarNotas)
         finalizar = findViewById(R.id.finalizar)
         guardar = findViewById(R.id.guardar)
+        promedio = findViewById(R.id.promedio)
+        notaFinal = findViewById(R.id.notaFinal)
+        nuevoEstudiante = findViewById(R.id.nuevoEstudiante)
+
+        finalizar.setOnClickListener{
+            promedio.text = "promedio :" + estudianteActual.calcularPromedio()
+            notaFinal.text = "nota final :" + estudianteActual.notaFinal()
+            nuevoEstudiante.isEnabled = true
+        }
 
         guardar.setOnClickListener {
             val nota = (ingresarNotas.text.toString())
             val porcentaje = (ingresarPorcentaje.text.toString())
             val nombre = (ingresarNombre.text.toString())
+
+
 
             if (validarVacio(nombre, nota, porcentaje)){
                 if (validarNombre(nombre) &&
@@ -68,6 +84,9 @@ class MainActivity : AppCompatActivity() {
         progress.progress = porcentaje
         if (porcentaje >= 100){
             finalizar.isEnabled = true
+            estudianteActual.nombre = (ingresarNombre.text.toString())
+            estudianteActual.porcentaje = listaPorcentaje
+            estudianteActual.notas = listaNotas
         }
     }
     fun mostrarMensaje(mensaje : String){
@@ -90,4 +109,8 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+
 }
+
+
+
