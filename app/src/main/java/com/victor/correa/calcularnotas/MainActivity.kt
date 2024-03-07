@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     private var porcentajeAcumulado = 0
     val listaNotas : MutableList<Double> = mutableListOf()
     val listaPorcentaje : MutableList<Int> = mutableListOf()
+    val listaEstudiantes : MutableList<Estudiante> = mutableListOf()
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +43,9 @@ class MainActivity : AppCompatActivity() {
         notaFinal = findViewById(R.id.notaFinal)
         nuevoEstudiante = findViewById(R.id.nuevoEstudiante)
 
+        nuevoEstudiante.setOnClickListener{
+
+        }
         finalizar.setOnClickListener{
             promedio.text = "promedio :" + estudianteActual.calcularPromedio()
             notaFinal.text = "nota final :" + estudianteActual.notaFinal()
@@ -62,6 +66,7 @@ class MainActivity : AppCompatActivity() {
                 ){
                     listaNotas.add(nota.toDouble())
                     listaPorcentaje.add(porcentaje.toInt())
+
 
                     porcentajeAcumulado += porcentaje.toInt()
 
@@ -87,7 +92,18 @@ class MainActivity : AppCompatActivity() {
             estudianteActual.nombre = (ingresarNombre.text.toString())
             estudianteActual.porcentaje = listaPorcentaje
             estudianteActual.notas = listaNotas
+            listaEstudiantes.add(estudianteActual)
         }
+    }
+    fun nuevoEstudiante(){
+        ingresarNombre.text.clear()
+        ingresarPorcentaje.text.clear()
+        ingresarNotas.text.clear()
+        promedio.text = ""
+        notaFinal.text = ""
+        progress.progress = 0
+        porcentajeAcumulado = 0
+
     }
     fun mostrarMensaje(mensaje : String){
         Toast.makeText(this,
@@ -107,9 +123,6 @@ class MainActivity : AppCompatActivity() {
     fun validarPorcentaje(porcentaje : Int ) : Boolean{
         return porcentajeAcumulado + porcentaje <=100
     }
-
-
-
 }
 
 
