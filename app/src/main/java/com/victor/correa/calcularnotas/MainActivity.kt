@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         nuevoEstudiante = findViewById(R.id.nuevoEstudiante)
 
         nuevoEstudiante.setOnClickListener{
-
+            nuevoEstudiante()
         }
         finalizar.setOnClickListener{
             promedio.text = "promedio :" + estudianteActual.calcularPromedio()
