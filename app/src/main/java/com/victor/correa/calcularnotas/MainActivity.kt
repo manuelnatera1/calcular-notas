@@ -104,6 +104,10 @@ class MainActivity : AppCompatActivity() {
         progress.progress = 0
         porcentajeAcumulado = 0
 
+        ingresarNombre.isEnabled = true
+        finalizar.isEnabled = false
+        nuevoEstudiante.isEnabled = false
+
     }
     fun mostrarMensaje(mensaje : String){
         Toast.makeText(this,
