@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main )
+        ///
 
         progress = findViewById(R.id.progress)
         ingresarNombre = findViewById(R.id.ingresarNombre)
