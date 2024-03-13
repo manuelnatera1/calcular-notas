@@ -15,11 +15,9 @@ class Estudiante(){
         var notaFinal: Double = 0.0
         var contador = 0
         for (n in notas) {
-            notaFinal += (n * porcentaje[contador]) / 100
+            notaFinal += ( n * porcentaje[contador]) / 100
             contador++
         }
         return Math.round(notaFinal * 1000.0) / 1000.0
-
     }
-
 }

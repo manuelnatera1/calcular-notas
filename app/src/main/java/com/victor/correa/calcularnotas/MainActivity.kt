@@ -45,6 +45,8 @@ class MainActivity : AppCompatActivity() {
 
         nuevoEstudiante.setOnClickListener{
             nuevoEstudiante()
+            listaPorcentaje.clear()
+            listaNotas.clear()
         }
         finalizar.setOnClickListener{
             promedio.text = "promedio :" + estudianteActual.calcularPromedio()
